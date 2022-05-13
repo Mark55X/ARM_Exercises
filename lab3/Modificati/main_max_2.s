@@ -11,8 +11,7 @@ V: .word -697, 1625, -873, 1375, -158, 1162, -1590, -1971, -345, 260, -956, 1329
 .global main
 
 @ Main con stack frame 
-main:   push {FP, LR}
-        MOV SP, FP
+main:   push {R0, LR}
 
         ldr R0, =V 
         PUSH {R0} 
@@ -23,8 +22,5 @@ main:   push {FP, LR}
 
         bl find_max  
 
-        ADD SP, SP, #8
-
-        MOV SP, FP
-        pop {FP, LR}
+        pop {R0, LR}
         mov pc, lr     
