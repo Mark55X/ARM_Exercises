@@ -9,8 +9,7 @@
 @   * r0: il valor massimo del vettore
 
 find_max:
-	PUSH {FP,LR,R1-R3}
-	MOV FP, SP
+	PUSH {LR,R1-R3}
 
    	@@@ istruzioni della funzione max ind V = V + i*4	
 
@@ -30,6 +29,5 @@ loop:	LDR R3, [R0, R1, LSL #2]
 
 set_max: MOV R0, R2
 
-fine: 	MOV SP, FP
-	POP {FP,PC,R1-R3} 
-	mov pc, lr   @ ritorna alla funzione chiamante.
+fine: POP {PC,R1-R3} 
+	  mov pc, lr   @ ritorna alla funzione chiamante.
