@@ -14,15 +14,17 @@ V: .word -697, 1625, -873, 1375, -158, 1162, -1590, -1971, -345, 260, -956, 1329
 main:   push {FP, LR}
         MOV SP, FP
 
-        ldr r1, =n    
-        ldr r1, [r1]    
-        ldr r0, =V 
+        ldr R0, =V 
+        PUSH {R0} 
 
-        PUSH {R1, R0}   @ Dati di ingresso nello stack: dimensione vettore + indirizzo vettore
+        ldr R0, =n    
+        ldr R0, [R0]  
+        PUSH {R0} 
+
         bl find_max  
 
         ADD SP, SP, #8
 
         MOV SP, FP
-        pop {FP, PC, lr}
+        pop {FP, PC}
         @mov pc, lr     
