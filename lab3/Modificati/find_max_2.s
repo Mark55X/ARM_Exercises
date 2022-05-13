@@ -35,3 +35,4 @@ set_max: MOV R0, R2
 fine: 	MOV SP, FP
 		POP {FP,PC,R1-R3} 
 		mov pc, lr   @ ritorna alla funzione chiamante.
+		

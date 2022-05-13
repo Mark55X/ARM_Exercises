@@ -18,7 +18,7 @@ main:   push {FP, LR}
         ldr r1, [r1]    
         ldr r0, =V 
 
-        PUSH{R1, R0}   @ Dati di ingresso nello stack: dimensione vettore + indirizzo vettore
+        PUSH {R1, R0}   @ Dati di ingresso nello stack: dimensione vettore + indirizzo vettore
         bl find_max  
 
         ADD SP, SP, #8
