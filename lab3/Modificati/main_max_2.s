@@ -26,5 +26,5 @@ main:   push {FP, LR}
         ADD SP, SP, #8
 
         MOV SP, FP
-        pop {FP, PC}
-        @mov pc, lr     
+        pop {FP, LR}
+        mov pc, lr     
