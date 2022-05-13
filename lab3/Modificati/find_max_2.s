@@ -35,6 +35,6 @@ set_max: MOV R0, R2
 
 fine: 	MOV SP, FP
 		POP {R1-R3} 
-		POP {FP, LR}
+		POP {FP,LR}
         MOV pc, lr   
 		
