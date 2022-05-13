@@ -33,8 +33,8 @@ loop:	LDR R3, [R0, R1, LSL #2]
 
 set_max: MOV R0, R2
 
-fine: 	MOV SP, FP
-		POP {R1-R3} 
+fine: 	POP {R1-R3} 
+		MOV SP, FP
 		POP {FP,LR}
         MOV pc, lr   
 		
