@@ -21,11 +21,11 @@ find_max:
 	SUBS R1, R1, #1
 
 loop:	LDR R3, [R0, R1, LSL #2]
-	CMP R3, R2
-	MOVGT R2, R3
-	BEQ set_max
-	SUBS R1, R1, #1
-	B loop
+		CMP R3, R2
+		MOVGT R2, R3		
+		SUBS R1, R1, #1
+		BMI set_max
+		B loop
 
 set_max: MOV R0, R2
 
